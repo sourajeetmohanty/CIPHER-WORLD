@@ -71,8 +71,9 @@ ul {
 
 .section-subtitle {
   letter-spacing: 0.4px;
-  line-height: 28px;
-  max-width: 550px;
+  /* line-height: 28px;
+  max-width: 550px; */
+  font-size: 20px;
 }
 
 .section-title-border {
