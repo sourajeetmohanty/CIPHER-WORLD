@@ -1,0 +1,613 @@
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  /* background-color: #000000; */
+  /* background-image: radial-gradient(#11581e, #041607); */
+  font-family: consolas, Helvetica, sans-serif;
+  /* font-size: 1.5rem; */
+  /* color: rgba(128, 255, 128, 0.8); */
+  /* text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8); */
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+span a {
+  color: #000000;
+  text-decoration: none;
+}
+span .fa {
+  color: #E90606;
+  margin: 0 3px;
+  font-size: 10px;
+  animation: pound 0.35s infinite alternate;
+  -webkit-animation: pound 0.35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.5);
+  }
+}
+@keyframes pound {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+/* background */
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+     180deg,
+     rgba(0, 0, 0, 0) 0,
+     rgba(0, 0, 0, 0.3) 50%,
+     rgba(0, 0, 0, 0) 100%
+  );
+  background-size: auto 4px;
+  z-index: 99;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+     0deg,
+     transparent 0%,
+     rgba(32, 128, 32, 0.2) 2%,
+     rgba(32, 128, 32, 0.8) 3%,
+     rgba(32, 128, 32, 0.2) 3%,
+     transparent 100%
+  );
+  background-repeat: no-repeat;
+  animation: scan 7.5s linear 0s infinite;
+}
+
+@keyframes scan {
+  0% {
+     background-position: 0 -100vh;
+  }
+
+  35%,
+  100% {
+     background-position: 0 100vh;
+  }
+}
+
+/*About*/
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3145;
+}
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section_all {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+.section-title {
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  letter-spacing: 0.4px;
+  line-height: 28px;
+  max-width: 550px;
+}
+
+.section-title-border {
+  background-color: #000;
+  height: 1 3px;
+  width: 44px;
+}
+
+.section-title-border-white {
+  background-color: #fff;
+  height: 2px;
+  width: 100px;
+}
+.text_custom {
+  color: #00bd2a;
+}
+
+.about_icon i {
+  font-size: 22px;
+  height: 65px;
+  width: 65px;
+  line-height: 65px;
+  display: inline-block;
+  background: #fff;
+  border-radius: 35px;
+  color: #00bd2a;
+  box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
+}
+
+.about_header_main .about_heading {
+  max-width: 450px;
+  font-size: 18px;
+}
+
+.about_icon span {
+  position: relative;
+  top: -10px;
+}
+
+.about_content_box_all {
+  padding: 28px;
+}
+
+/*KEY*/
+.key {
+  position: relative;
+  left: 50%;
+  /* top: 25%; */
+  margin-left: -90px;
+  /* margin-top: -95px; */
+  cursor: pointer;
+}
+/* End: CSS for CodePen layout only */
+/* Start: Key */
+@keyframes jump {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -16px, 0) rotateZ(8deg);
+  }
+  70% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -6px, 0) rotateZ(-2deg);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0) rotateZ(2deg);
+  }
+}
+@keyframes reset {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 8px, 0);
+  }
+}
+@keyframes clockRotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes glowStarD0 {
+  0% {
+    transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  40%,
+  100% {
+    transform: rotateZ(90deg) scale3d(1.2, 1.2, 1);
+    opacity: 0;
+  }
+}
+@keyframes glowStarD1 {
+  0%,
+  15% {
+    transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    transform: rotateZ(90deg) scale3d(1.2, 1.2, 1);
+    opacity: 0;
+  }
+}
+@keyframes glowStarD2 {
+  0%,
+  30% {
+    transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  70%,
+  100% {
+    transform: rotateZ(90deg) scale3d(1.2, 1.2, 1);
+    opacity: 0;
+  }
+}
+@keyframes glowCircle {
+  0% {
+    stroke-dashoffset: -10;
+  }
+  100% {
+    stroke-dashoffset: 10;
+  }
+}
+@keyframes glowLineD0 {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  45%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes glowLineD1 {
+  0%,
+  5% {
+    stroke-dashoffset: 40;
+  }
+  50%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes glowLineD2 {
+  0%,
+  10% {
+    stroke-dashoffset: 40;
+  }
+  55%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes glowLineD3 {
+  0%,
+  15% {
+    stroke-dashoffset: 40;
+  }
+  60%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes glowLineD4 {
+  0%,
+  20% {
+    stroke-dashoffset: 40;
+  }
+  65%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+@keyframes glowLineD5 {
+  0%,
+  25% {
+    stroke-dashoffset: 40;
+  }
+  70%,
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+.key {
+  width: 180px;
+  height: 150px;
+}
+.key svg {
+  width: 180px;
+  height: 150px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.key svg .key-body {
+  -webkit-transform-origin: 80px 78px;
+  -moz-transform-origin: 80px 78px;
+  -ms-transform-origin: 80px 78px;
+  -o-transform-origin: 80px 78px;
+  transform-origin: 80px 78px;
+}
+.key svg .key-body .key-border {
+  fill: #fff;
+  stroke: #9aa8b1;
+  stroke-width: 2;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.key svg .key-body .key-highlight {
+  fill: #e8ebed;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.key svg .key-body .key-darkness {
+  fill: #e8ebed;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.key svg .data-circle {
+  opacity: 0.3;
+  -webkit-transform-origin: 89.5px 76px;
+  -moz-transform-origin: 89.5px 76px;
+  -ms-transform-origin: 89.5px 76px;
+  -o-transform-origin: 89.5px 76px;
+  transform-origin: 89.5px 76px;
+  -webkit-transition: all 800ms;
+  -moz-transition: all 800ms;
+  -o-transition: all 800ms;
+  transition: all 800ms;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+  -webkit-animation: clockRotate 18s linear 0 infinite reverse;
+  -moz-animation: clockRotate 18s linear 0 infinite reverse;
+  -o-animation: clockRotate 18s linear 0 infinite reverse;
+  animation: clockRotate 18s linear 0 infinite reverse;
+}
+.key svg .data-circle path {
+  fill: none;
+}
+.key svg .data-circle text {
+  font-size: 9px;
+  font-weight: 700;
+  fill: #89949b;
+  letter-spacing: 1px;
+}
+.key svg .data-circle.inner {
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  -o-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-duration: 20s;
+  -moz-animation-duration: 20s;
+  -o-animation-duration: 20s;
+  animation-duration: 20s;
+}
+.key svg .data-circle.inner text {
+  font-size: 8.1px;
+}
+.key svg .glow-circle {
+  opacity: 0;
+  fill: none;
+  stroke: #cb9916;
+  stroke-width: 3;
+  stroke-dasharray: 30, 14, 0.1, 14;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+  -webkit-animation: glowCircle 3s ease-in-out 0 infinite alternate;
+  -moz-animation: glowCircle 3s ease-in-out 0 infinite alternate;
+  -o-animation: glowCircle 3s ease-in-out 0 infinite alternate;
+  animation: glowCircle 3s ease-in-out 0 infinite alternate;
+}
+.key svg .glow-lines {
+  opacity: 0;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.key svg .glow-lines line {
+  stroke: #cb9916;
+  stroke-width: 3;
+  stroke-dasharray: 40 100;
+  stroke-dashoffset: 40;
+  -webkit-animation: glowLineD0 2s linear 0 infinite;
+  -moz-animation: glowLineD0 2s linear 0 infinite;
+  -o-animation: glowLineD0 2s linear 0 infinite;
+  animation: glowLineD0 2s linear 0 infinite;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.key svg .glow-lines line:nth-child(1) {
+  -webkit-animation-name: glowLineD0;
+  -moz-animation-name: glowLineD0;
+  -o-animation-name: glowLineD0;
+  animation-name: glowLineD0;
+}
+.key svg .glow-lines line:nth-child(2) {
+  -webkit-animation-name: glowLineD3;
+  -moz-animation-name: glowLineD3;
+  -o-animation-name: glowLineD3;
+  animation-name: glowLineD3;
+}
+.key svg .glow-lines line:nth-child(3) {
+  -webkit-animation-name: glowLineD1;
+  -moz-animation-name: glowLineD1;
+  -o-animation-name: glowLineD1;
+  animation-name: glowLineD1;
+}
+.key svg .glow-lines line:nth-child(4) {
+  -webkit-animation-name: glowLineD4;
+  -moz-animation-name: glowLineD4;
+  -o-animation-name: glowLineD4;
+  animation-name: glowLineD4;
+}
+.key svg .glow-lines line:nth-child(5) {
+  -webkit-animation-name: glowLineD2;
+  -moz-animation-name: glowLineD2;
+  -o-animation-name: glowLineD2;
+  animation-name: glowLineD2;
+}
+.key svg .glow-lines line:nth-child(6) {
+  -webkit-animation-name: glowLineD5;
+  -moz-animation-name: glowLineD5;
+  -o-animation-name: glowLineD5;
+  animation-name: glowLineD5;
+}
+.key svg .stars {
+  opacity: 0;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.key svg .stars path {
+  fill: #fff;
+  stroke: #cb9916;
+  stroke-width: 2;
+  -webkit-animation: glowStarD0 2s linear 0.9s infinite;
+  -moz-animation: glowStarD0 2s linear 0.9s infinite;
+  -o-animation: glowStarD0 2s linear 0.9s infinite;
+  animation: glowStarD0 2s linear 0.9s infinite;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+  -webkit-transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+  -moz-transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+  -ms-transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+  -o-transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+  transform: rotateZ(0deg) scale3d(0.5, 0.5, 1);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+.key svg .stars path:nth-child(1) {
+  -webkit-animation-name: glowStarD0;
+  -moz-animation-name: glowStarD0;
+  -o-animation-name: glowStarD0;
+  animation-name: glowStarD0;
+}
+.key svg .stars path:nth-child(2) {
+  -webkit-animation-name: glowStarD1;
+  -moz-animation-name: glowStarD1;
+  -o-animation-name: glowStarD1;
+  animation-name: glowStarD1;
+}
+.key svg .stars path:nth-child(3) {
+  -webkit-animation-name: glowStarD2;
+  -moz-animation-name: glowStarD2;
+  -o-animation-name: glowStarD2;
+  animation-name: glowStarD2;
+}
+.key.on svg .key-body {
+  -webkit-animation: jump 0.7s;
+  -moz-animation: jump 0.7s;
+  -o-animation: jump 0.7s;
+  animation: jump 0.7s;
+}
+.key.on svg .key-body .key-border {
+  fill: #ffd055;
+  stroke: #cb9916;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .key-body .key-highlight {
+  fill: #ffe155;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .key-body .key-darkness {
+  fill: #f1bf3c;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .data-circle {
+  opacity: 0;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+}
+.key.on svg .glow-circle {
+  opacity: 0.15;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .glow-lines {
+  opacity: 0.15;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .glow-lines line {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+.key.on svg .stars {
+  opacity: 1;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.key.on svg .stars path {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+.key.off svg .key-body {
+  -webkit-animation: reset 0.4s;
+  -moz-animation: reset 0.4s;
+  -o-animation: reset 0.4s;
+  animation: reset 0.4s;
+}
+
