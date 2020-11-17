@@ -1,8 +1,10 @@
                             
 //encrypt   
-let s="abcd sadasd";
-let k=2;
-s=s.toUpperCase();
+$('#encrypt').on('click',()=>{
+    let s=$('#input-txt').val();
+    let k=$('#input-key').val();
+    k = parseInt(k);
+    s=s.toUpperCase();
 let res="";
 let l=s.length;
 for(let i=0;i<l;i++)
@@ -27,15 +29,22 @@ for(let i=0;i<l;i++)
     }
 }
 console.log(res);
+$('#result').val(res);
+// $('.key').click(function() {
+    $('.key').removeClass('on').addClass('off');
+//   });
+})
 
 
 
 
-
-
-
-//decrypt;
-let res2="";
+$('#decrypt').on('click',()=>{
+    let res=$('#input-txt').val();
+    let k=$('#input-key').val();
+    k = parseInt(k);
+    res=res.toUpperCase();
+    l=res.length;
+    let res2="";
 for(let i=0;i<l;i++)
 {
     if(res[i]!=' ')
@@ -63,3 +72,8 @@ for(let i=0;i<l;i++)
     }
 }
 console.log(res2);
+$('#result').val(res2);
+$('.key').removeClass('off  ').addClass('on');
+})
+
+

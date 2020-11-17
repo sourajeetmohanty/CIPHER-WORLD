@@ -11,24 +11,62 @@
     <link rel="stylesheet" href="stylesheets/index.css">
     <title>Let's encrypt</title>
   </head>
+  <style>
+    body{
+      background-image:
+  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5));
+    }
+  </style>
   <body>
     <nav class="navbar navbar-dark bg-dark justify-content-center">
       <span class="navbar-text">
         Made with <i class="fa fa-heart pulse"></i> by <a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f" target="_blank">Sourajeet Mohanty</a>    
         </span>
     </nav>
-    <div class="container mt-5">
+    <section class="about-details mt-4 section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-12" data-aos="fade-right">
+						<div class="single_about_details">
+							<h3>XOR CIPHER</h3>
+							<span></span>
+							<p class="mb20">
+                This uses xor operation to calculate the xor of a key character with all the plain text characters and hence encrypting it.</p>
+							<p> 
+                
+                
+                FOR EXAMPLE:
+                <br>
+                 plaintext:   runfast
+                <br>
+                ciphertext: "%>61#$
+              </p>
+                <strong>Cryptanalysis</strong>
+                <p>
+                  XOR Encryption is an encryption method used to encrypt data and is hard to crack by brute-force method, i.e generating random encryption keys to match with the correct one.
+                 </p>
+						</div>
+					</div><!-- END COL-->
+			
+				</div><!-- END ROW-->
+			</div><!-- END CONTAINER-->
+    </section>
+    
+    <div class="container my-5">
+      <h2 class="text-center">ANALYSER </h2>
+      <br>
         <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="">Text and key</span>
             </div>
-            <input type="text" id="input-txt" class="form-control">
+            <!-- <input type="text" id="input-txt" class="form-control"> -->
+            <textarea class="form-control" id="input-txt" aria-label="With textarea"></textarea>
             <input type="text" id="input-key" class="form-control">
           </div>
           <div class="d-flex justify-content-around align-items-center mt-5">
               <button class="btn btn-outline-success " id="encrypt">Encrypt</button>
               <div>
-                <div class="key off">
+                <div class="key on">
                   <svg viewBox="0 0 180 150">
                     <g class="data-circle inner">
                       <path id="data-circle-inner-path" d="M119.5,76c0,16.6-13.4,30-30,30s-30-13.4-30-30s13.4-30,30-30S119.5,59.4,119.5,76"/>
@@ -75,11 +113,12 @@
             <textarea class="form-control" id="result" aria-label="With textarea"></textarea>
           </div>    
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="javascripts/cryptic.js"></script>
+    <script src="javascripts/xor.js"></script>
   </body>
 </html>

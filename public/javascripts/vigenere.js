@@ -1,7 +1,8 @@
 
 //encrypt   
-let s="abcdsadasd";
-let k="key";
+$('#encrypt').on('click',()=>{
+    let s=$('#input-txt').val();
+    let k=$('#input-key').val();
 s=s.toUpperCase();
 k=k.toUpperCase();
 let res="";
@@ -45,6 +46,11 @@ for( let i=0;i<l1;i++)
     }
 }
 console.log(res);
+$('#result').val(res);
+// $('.key').click(function() {
+    $('.key').toggleClass('on').toggleClass('off');
+//   });
+})
 
 
 
@@ -54,8 +60,24 @@ console.log(res);
 
 
 //decrypt;
-j=0;
+$('#decrypt').on('click',()=>{
+    let res=$('#input-txt').val();
+    let k=$('#input-key').val();
+let j=0;
 let res2="";
+let l1=res.length;
+let l2=k.length;
+res=res.toUpperCase();
+k=k.toUpperCase();
+if(l2<l1)
+{
+	while(l2<=l1)
+	{
+		k=k+k;
+		l2=k.length;
+	}
+}
+
 for(let i=0;i<l1;i++)
 {
     if(res[i]!=' ')
@@ -87,3 +109,6 @@ for(let i=0;i<l1;i++)
     }
 }
 console.log(res2);
+$('#result').val(res2);
+$('.key').removeClass('off  ').addClass('on');
+})

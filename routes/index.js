@@ -7,20 +7,20 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET crypto page*/
-router.get('/crypto', function(req, res, next) {
-  res.render('crypto');
+router.get('/ceaser', function(req, res, next) {
+  res.render('ceaser');
 })
 /* GET crypto page*/
-router.get('/crypto', function(req, res, next) {
-  res.render('crypto');
+router.get('/vigenere', function(req, res, next) {
+  res.render('vigenere');
 })
 /* GET crypto page*/
-router.get('/crypto', function(req, res, next) {
-  res.render('crypto');
+router.get('/vernam', function(req, res, next) {
+  res.render('vernam');
 })
 /* GET crypto page*/
-router.get('/crypto', function(req, res, next) {
-  res.render('crypto');
+router.get('/xor', function(req, res, next) {
+  res.render('xor');
 })
 
 module.exports = router;

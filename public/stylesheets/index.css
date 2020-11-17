@@ -1,15 +1,14 @@
 
 body {
   box-sizing: border-box;
-  height: 100%;
+  height: auto;
   /* background-color: #000000; */
   /* background-image: radial-gradient(#11581e, #041607); */
   font-family: consolas, Helvetica, sans-serif;
   /* font-size: 1.5rem; */
   /* color: rgba(128, 255, 128, 0.8); */
   /* text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8); */
-  min-height: 100vh;
-  overflow: hidden;
+ 
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -37,55 +36,6 @@ span .fa {
   }
 }
 
-/* background */
-.overlay {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-     180deg,
-     rgba(0, 0, 0, 0) 0,
-     rgba(0, 0, 0, 0.3) 50%,
-     rgba(0, 0, 0, 0) 100%
-  );
-  background-size: auto 4px;
-  z-index: 99;
-}
-
-.overlay::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-     0deg,
-     transparent 0%,
-     rgba(32, 128, 32, 0.2) 2%,
-     rgba(32, 128, 32, 0.8) 3%,
-     rgba(32, 128, 32, 0.2) 3%,
-     transparent 100%
-  );
-  background-repeat: no-repeat;
-  animation: scan 7.5s linear 0s infinite;
-}
-
-@keyframes scan {
-  0% {
-     background-position: 0 -100vh;
-  }
-
-  35%,
-  100% {
-     background-position: 0 100vh;
-  }
-}
 
 /*About*/
 h1, h2, h3, h4, h5, h6 {
@@ -105,7 +55,13 @@ ul {
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
-  min-height: 100vh;
+  min-height: 100vh;  
+  background-image:
+  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('/images/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .section-title {
   font-weight: 700;
@@ -130,15 +86,13 @@ ul {
   height: 2px;
   width: 100px;
 }
-.text_custom {
-  color: #00bd2a;
-}
 
-.about_icon i {
-  font-size: 22px;
-  height: 65px;
-  width: 65px;
-  line-height: 65px;
+
+.about_icon img {
+
+  height: 75px;
+  width: 75px;
+  line-height: 75px;
   display: inline-block;
   background: #fff;
   border-radius: 35px;
@@ -610,4 +564,30 @@ ul {
   -o-animation: reset 0.4s;
   animation: reset 0.4s;
 }
+/* Encryption page about */
+
+.single_about_details{}
+@media only screen and (max-width:768px) { 
+.single_about_details{padding-bottom: 60px;}
+}
+.single_about_details h3{
+color: #000;
+font-size: 45px;
+line-height: 50px;
+margin: 0;
+font-weight: 500;
+}
+.single_about_details span{
+background: #00bcd4 none repeat scroll 0 0;
+display: block;
+height: 3px;
+margin: 20px 0;
+width: 70px;
+border-radius: 3px;	
+}
+.mb20{font-weight: 500;
+margin-bottom: 20px;}
+.single_about_details p{}
+.single_about_details_img{text-align: center;}
+.single_about_details_img img{display: inline-block;}
 
