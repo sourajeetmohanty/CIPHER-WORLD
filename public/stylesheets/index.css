@@ -87,7 +87,11 @@ ul {
   height: 2px;
   width: 100px;
 }
-
+@media (max-width:800px){
+  #btn-key{
+    justify-content: space-between !important; 
+  }
+}
 
 .about_icon img {
 
